@@ -1,4 +1,6 @@
 spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
     hibernate:
@@ -6,5 +8,4 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  
