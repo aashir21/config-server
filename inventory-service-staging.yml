@@ -1,11 +1,28 @@
+
 spring:
-    jpa:
-      show-sql: true
+  application:
+    name: university
+  datasource:
+    username: root
+    password: password
+    url: jdbc:mysql://localhost:3306/university
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
       hibernate:
-        ddl-auto: update
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.MySQL8Dialect
-    datasource:
-        url: jdbc:mysql://localhost:3306/inventoryservice
-        driver-class-name: com.mysql.cj.jdbc.Driver
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  config:
+    import: optional:configserver:http://localhost:8888
+
+server:
+  port: 9090
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
