@@ -3,8 +3,6 @@ spring:
   application:
     name: university
   datasource:
-    username: root
-    password: password
     url: jdbc:mysql://localhost:3306/university
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
